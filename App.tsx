@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerView } from '@react-navigation/drawer';
+
 import { HomeScreen, MoviesScreen } from './src/screens';
+import { DrawerType } from './src/NavigationConfig';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,7 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator<DrawerType>();
 
 export default function App() {
   return (
