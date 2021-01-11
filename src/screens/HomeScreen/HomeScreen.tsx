@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, StatusBar } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
 
-import { Colors } from '../../constants';
+import { Colors } from '../MoviesScreen/constants';
 import { DrawerType } from '../../NavigationConfig';
 
 const styles = StyleSheet.create({

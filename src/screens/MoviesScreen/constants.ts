@@ -8,3 +8,8 @@ export const API_KEY = 'be244f548a27d8c36fc000d6ba379c12';
 
 export const IMAGE_TNUMB = (path: string) =>
   `https://image.tmdb.org/t/p/w500/${path}`;
+
+export const IMAGE_FULL = (path: string) =>
+  `https://image.tmdb.org/t/p/original/${path}`;
+
+export const MOVIES_AS_KEY = 'MOVIES_AS_KEY';
