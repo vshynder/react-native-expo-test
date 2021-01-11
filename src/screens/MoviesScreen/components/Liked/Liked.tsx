@@ -26,7 +26,7 @@ const Liked = ({}: LikedProps) => {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll}>
         {MoviesState.favouriteMovies.map((movie) => (
-          <MovieCard movie={movie} />
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </ScrollView>
     </SafeAreaView>

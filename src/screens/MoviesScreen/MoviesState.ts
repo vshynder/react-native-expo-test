@@ -92,7 +92,9 @@ class Movies {
     try {
       const movies = await AsyncStorage.getItem(MOVIES_AS_KEY);
       if (movies) {
-        this.favouriteMovies = JSON.parse(movies);
+        runInAction(() => {
+          this.favouriteMovies = JSON.parse(movies);
+        });
       }
     } catch (error) {
       console.log('get favourite movies error', error);
@@ -117,7 +119,9 @@ class Movies {
           );
         });
       } else {
-        AsyncStorage.setItem(MOVIES_AS_KEY, JSON.stringify([movie]));
+        runInAction(() => {
+          AsyncStorage.setItem(MOVIES_AS_KEY, JSON.stringify([movie]));
+        });
       }
     } catch (error) {
       console.log('set favourite movies error', error);

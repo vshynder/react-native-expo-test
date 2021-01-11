@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   overview: {
-    height: wHeight / 3,
+    height: wHeight / 2,
     justifyContent: 'space-around',
   },
   overviewText: {
