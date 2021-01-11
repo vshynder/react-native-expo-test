@@ -36,8 +36,18 @@ class Movies {
   }
 
   movies: Movie[] = [];
+  searchMovies: Movie[] = [];
   genres: Genre[] = [];
   favouriteMovies: Movie[] = [];
+
+  searchByName = async (query: string) => {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
+    axios.get(url).then(({ data }) => {
+      runInAction(() => {
+        this.searchMovies = data.results;
+      });
+    });
+  };
 
   fetchMovies = async () => {
     await this.getGenres();
@@ -99,7 +109,7 @@ class Movies {
           if (match) {
             this.favouriteMovies = parsed.filter((m) => m.id !== movie.id);
           } else {
-            this.favouriteMovies = [...parsed, movie];
+            this.favouriteMovies = [movie, ...parsed];
           }
           AsyncStorage.setItem(
             MOVIES_AS_KEY,

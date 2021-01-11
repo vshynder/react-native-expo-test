@@ -96,11 +96,13 @@ const Content = ({ movie }: ContentProps) => {
         </View>
       </View>
       <ScrollView contentContainerStyle={styles.genres} horizontal>
-        {movie.genres.split(', ').map((genre) => (
-          <View key={genre} style={styles.ganreBox}>
-            <Text style={styles.genre}>{genre}</Text>
-          </View>
-        ))}
+        {movie.genres
+          ? movie.genres.split(', ').map((genre) => (
+              <View key={genre} style={styles.ganreBox}>
+                <Text style={styles.genre}>{genre}</Text>
+              </View>
+            ))
+          : null}
       </ScrollView>
       <View style={styles.overview}>
         <Text style={styles.overviewText}>{movie.overview}</Text>

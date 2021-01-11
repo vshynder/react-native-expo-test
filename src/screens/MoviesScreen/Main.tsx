@@ -13,6 +13,7 @@ const Main = () => (
       activeTintColor: Colors.primary,
       inactiveTintColor: Colors.secondary,
     }}
+    initialRouteName="Overview"
   >
     <BottomTabs.Screen
       name="Search"
